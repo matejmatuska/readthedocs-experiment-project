@@ -6,29 +6,29 @@ Usage
 Installation
 ------------
 
-To use Lumache, first install it using pip:
+To use framework, first install it using pip:
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   (.venv) $ pip install framework
 
-Creating recipes
-----------------
+Producing messages
+------------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
+To define a new type of message, extend the ``framework.Model`` class:
 
-.. autofunction:: lumache.get_random_ingredients
+.. autoclass:: framework.Model
 
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
+You can dump info about the Model with the :py:func:`framework.Model.dump` function:
 
-.. autoexception:: lumache.InvalidKindError
+.. autofunction:: framework.Model.dump
 
 For example:
 
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+>>> import framework
+>>> class MyModel(framework.Model):
+>>>     self.name = 'whatever'
+>>>
+>>> model = MyModel()
+>>> model.dump()
 

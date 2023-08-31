@@ -1,7 +1,9 @@
 API
 ===
 
-.. autosummary::
-   :toctree: generated
+Module framework
+----------------
 
-   framework
+.. automodule:: framework
+   :members:
+   :show-inheritance:
